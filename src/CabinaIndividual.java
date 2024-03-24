@@ -3,7 +3,8 @@
  *  interfaz {@link Cabina}, nos ayuda a crear una nave con una <i>cabina</i> <b>individual</b>.
  *  @implements Cabina
  */
-public class Individual implements Cabina{
+public class CabinaIndividual implements Cabina{
+    String tipo = "";
 
     /**
      * Método crearCabina, que sobreescribe al metodo homonimo de la interfaz {@link Cabina}. 
@@ -12,8 +13,7 @@ public class Individual implements Cabina{
      */
     @Override
     public void crearCabina() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'crearCabina'");
+        tipo = "Carroceria deportiva";
     }
 
     /**
@@ -22,8 +22,6 @@ public class Individual implements Cabina{
      */
     @Override
     public void getTipo() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getTipo'");
+        System.out.println(tipo);
     }
-    
 }
