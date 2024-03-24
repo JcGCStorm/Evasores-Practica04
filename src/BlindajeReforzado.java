@@ -3,7 +3,7 @@
  * a la interfaz {@link Blindaje}, nos ayuda a crear una nave.
  *  @implements Blindaje
  */
-public class Reforzado implements Blindaje{
+public class BlindajeReforzado implements Blindaje{
 
     /**
      * Método crearBlindaje, que sobreescribe al metodo homonimo de la interfaz {@link Blindaje}, 

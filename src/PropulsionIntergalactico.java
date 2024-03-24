@@ -4,7 +4,7 @@
  * intergalactica</b>.
  *  @implements Propulsion
  */
-public class Intergalactico implements Propulsion{
+public class PropulsionIntergalactico implements Propulsion{
 
      /**
      * Método crearPropulsion, que sobreescribe al metodo homonimo de la interfaz {@link Propulsion}, 
