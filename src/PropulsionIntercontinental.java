@@ -8,7 +8,7 @@
  * @implements Propulsion
  */
 public class PropulsionIntercontinental implements Propulsion {
-    String tipo = "   - Propulsion para distancias planetarias";
+    String tipo = "   1. Propulsion para distancias intercontinentales";
     int precio = 5000;
     int ataque = 0;
     int defensa = 0;
@@ -24,7 +24,7 @@ public class PropulsionIntercontinental implements Propulsion {
      */
     @Override
     public void crearPropulsion() {
-        tipo = "Propulsion para distancias planetarias";
+        tipo = "   - Propulsion para distancias planetarias";
     }
 
     /**
@@ -44,6 +44,9 @@ public class PropulsionIntercontinental implements Propulsion {
                 "\n  Peso: " + peso);
     }
 
+    /**
+     * Metodos get para obtener las estadisticas y el precio
+     */
     @Override
     public int getPrecio() {
         return precio;

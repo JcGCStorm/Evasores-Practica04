@@ -15,13 +15,13 @@ public class FabricaPropulsion extends AbstractFactory {
      * en este caso
      * nos devuelve <i>propulsion</i> según la decisión del cliente. En este metodo
      * hacemos uso del
-     * metodo <code>getPropulsion()</code> que nos devuelve el sistema de propulsion
-     * de la nave del cliente.
+     * metodo <code>getPropulsion()</code> que nos devuelve el sistema de
+     * propulsion de la nave del cliente.
      * 
      * @return un objeto del tipo del sstema de propulsion que escogio el cliente.
      */
     @Override
-    public Object getComponente(int tipoComponente) {
+    public Object getComponente(String tipoComponente) {
         return getPropulsion(tipoComponente);
     }
 
@@ -34,15 +34,15 @@ public class FabricaPropulsion extends AbstractFactory {
      * @param tipoPropulsion
      * @return {@link Propulsion}, la propulsion deseada por el cliente.
      */
-    public Propulsion getPropulsion(int tipoPropulsion) {
-        if (tipoPropulsion == 0) {
+    public Propulsion getPropulsion(String tipoPropulsion) {
+        if (tipoPropulsion == null) {
             return null;
-        } else if (tipoPropulsion == 1) {
+        } else if (tipoPropulsion.equalsIgnoreCase("1")) {
             return new PropulsionIntercontinental();
-        } else if (tipoPropulsion == 2) {
-            return new PropulsionInterplanetario();
-        } else if (tipoPropulsion == 3) {
+        } else if (tipoPropulsion.equalsIgnoreCase("2")) {
             return new PropulsionIntergalactico();
+        } else if (tipoPropulsion.equalsIgnoreCase("3")) {
+            return new PropulsionInterplanetario();
         }
         return null;
     }

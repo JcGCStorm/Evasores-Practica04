@@ -8,7 +8,7 @@
  * @implements Propulsion
  */
 public class PropulsionIntergalactico implements Propulsion {
-    String tipo = "   - Propulsion para viajar entre galaxias";
+    String tipo = "   2. Propulsion para viajar entre galaxias";
     int precio = 7000;
     int ataque = 0;
     int defensa = 50;
@@ -24,7 +24,7 @@ public class PropulsionIntergalactico implements Propulsion {
      */
     @Override
     public void crearPropulsion() {
-        tipo = "Propulsion para viajar entre galaxias";
+        tipo = "   - Propulsion para viajar entre galaxias";
     }
 
     /**
@@ -44,6 +44,9 @@ public class PropulsionIntergalactico implements Propulsion {
                 "\n  Peso: " + peso);
     }
 
+    /**
+     * Metodos get para obtener las estadisticas y el precio
+     */
     @Override
     public int getPrecio() {
         return precio;

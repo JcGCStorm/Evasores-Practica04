@@ -8,7 +8,7 @@
  * @implements Cabina
  */
 public class CabinaTripulacion implements Cabina {
-    String tipo = "   - Cabina para una Tripulacion";
+    String tipo = "   3. Cabina para una Tripulacion";
     int precio = 200;
     int ataque = 0;
     int defensa = 150;
@@ -25,7 +25,7 @@ public class CabinaTripulacion implements Cabina {
      */
     @Override
     public void crearCabina() {
-        tipo = "Cabina para una Tripulacion";
+        tipo = "   - Cabina para una Tripulacion";
     }
 
     /**
@@ -48,6 +48,9 @@ public class CabinaTripulacion implements Cabina {
                 "\n  Peso: " + peso);
     }
 
+    /**
+     * Metodos get para obtener las estadisticas y el precio
+     */
     @Override
     public int getPrecio() {
         return precio;

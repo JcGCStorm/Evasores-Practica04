@@ -3,9 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        // Fabrica productora.
-        DisenoNaves nave = new DisenoNaves();
-
+        // Se inicializa el programa
         System.out.println("Bienvenido al Tianguis intergalactico de Naves Espaciales\n" +
                 "Aquí contamos con la mas selecta variedad de piezas para tu nave espacial\n" +
                 "Antes de presentarte nuestro catalogo de piezas, por favor introduce tu presupuesto:");
@@ -16,53 +14,113 @@ public class Main {
             sc.nextLine();
         }
 
+        // Se introduce el presupuesto
         double presupuesto = sc.nextInt();
         System.out.println("Gracias por introducir tu presupuesto, aquí en el Imperio Galactico " +
-                "contamos con las siguientes piezas:");
-        System.out.println("Cabina: \n  1. Cabina para un Ejercito: $400 \n  2. Cabina Individual: $100 \n" +
-                "  3. Cabina para una Tripulacion: $200");
-        System.out.println("Blindaje: \n  1. Blindaje simple: $100 \n  2. Blindaje reforzado: $180 \n" +
-                "  3. Blindaje de fortaleza: $200");
-        System.out.println("Arma: \n  1. Misiles de Plasma: $1,500 \n  2. Laser Destructor: $2,000 \n" +
-                "  3. Laser Simple: $800");
-        System.out.println(
-                "Propulsion: \n  1. Propulsion intercontinental: $5,000 \n  2. Propulsion Intergalactica: $7,000 \n"
-                        + "  3. Propulsion Planetaria: $2,000");
-        System.out.println("Por favor escoja los componentes con los que desea construir su nave" +
-                "a continuación se muestran las especificaciones de las cabinas.");
+                "contamos con las siguientes piezas, por favor escoja los componentes con los que" +
+                "desea construir su nave, a continuación se muestran a detalle las especificaciones de" +
+                "las cabinas.");
 
+        // Si el presupuesto es valido, se podra crear la nave, en el caso contrario se
+        // muestra el menu
+        Nave nna = crearNave();
+        if (presupuesto > nna.sumaPrecio()) {
+            System.out.println("Tu nave está lista para recoger, estas son sus características, " +
+                    "paga en la caja la cantidad de $" + nna.sumaPrecio());
+            nna.muestraNave();
+            System.out.println("Presiona 0 para salir");
+        } else {
+            nna.sumaPrecio();
+            System.out.println("Chanfles, el costo de tu nave sobrepasa tu presupuesto. ¿Deseas " +
+                    "diseñar otra nave o ver nuestro catálogo?");
+            System.out.println("1. Ver Catalogo. \n 2. Diseñar otra nave.");
+        }
+
+        // Despliega el menu de naves fabricadas
+        int opcionCatalogo = sc.nextInt();
+        switch (opcionCatalogo) {
+            case 1:
+                System.out.println("######## Catalogo ########");
+                nna.naveFabricada();
+                break;
+            case 2:
+                crearNave();
+                break;
+            default:
+                break;
+        }
+
+        if (presupuesto < nna.naveIndividualPrecio() && presupuesto < nna.naveMilitarPrecio() &&
+                presupuesto < nna.naveGuerraPrecio()) {
+            System.out.println("No te alcanza, regresa cuando hayas cobrado la quincena.");
+            System.out.println("Presiona 0 para salir.");
+            int salir = sc.nextInt();
+        } else {
+            System.out.println("Escoge una nave");
+            int opcionCatalogo2 = sc.nextInt();
+            switch (opcionCatalogo2) {
+                case 1:
+                    nna.naveIndividualdeCombate();
+                    break;
+                case 2:
+                    nna.naveMilitarDeTransporte();
+                case 3:
+                    nna.naveDeGuerra();
+                default:
+                    break;
+            }
+        }
+    }
+
+    // Inicializa el metodo de cracion de naves
+    public static Nave crearNave() {
+        DisenoNaves nave = new DisenoNaves();
         System.out.println("CABINA:");
         new CabinaEjercito().getEstadisticas();
         new CabinaIndividual().getEstadisticas();
         new CabinaTripulacion().getEstadisticas();
         Scanner scanner = new Scanner(System.in);
-        int opcion = scanner.nextInt();
-        Nave nna = new Nave(null, null, null, null);
+        String opcionCabina = scanner.nextLine();
 
-        DisenoNaves naves = new DisenoNaves();
-        // Fabricas para cada parte del auto.
+        // Fabricas para cada parte de la nave.
         AbstractFactory fabricaPropulsion = nave.getFactory("PROPULSION");
         AbstractFactory fabricaBlindaje = nave.getFactory("BLINDAJE");
         AbstractFactory fabricaCabina = nave.getFactory("CABINA");
         AbstractFactory fabricaArmas = nave.getFactory("ARMAS");
 
-        Cabina cabinaNueva = (Cabina) fabricaPropulsion.getComponente(opcion);
+        Cabina cabinaNueva = (Cabina) fabricaCabina.getComponente(opcionCabina);
         cabinaNueva.crearCabina();
 
-        if (sc.hasNextInt()) {
-            int eleccion = sc.nextInt();
-            switch (eleccion) {
-                case 1:
-                    new CabinaIndividual();
-                case 2:
-                    new CabinaTripulacion();
-                case 3:
-                    new CabinaEjercito();
-                default:
-                    break;
-            }
-        }
-        System.out.println("\nIngrese una entrada valida");
-        sc.nextLine();
+        System.out.println("A continuación se muestran a detalle las especificaciones de" +
+                "las propulsiones con las que contamos.");
+        new PropulsionIntercontinental().getEstadisticas();
+        new PropulsionIntergalactico().getEstadisticas();
+        new PropulsionInterplanetario().getEstadisticas();
+        Scanner scannerPropulsion = new Scanner(System.in);
+        String opcionPropulsion = scanner.nextLine();
+        Propulsion propulsionNueva = (Propulsion) fabricaPropulsion.getComponente(opcionPropulsion);
+        propulsionNueva.crearPropulsion();
+
+        System.out.println("A continuación se muestran a detalle las especificaciones de" +
+                "los blindajes con los que contamos.");
+        new BlindajeSimple().getEstadisticas();
+        new BlindajeReforzado().getEstadisticas();
+        new BlindajeFortaleza().getEstadisticas();
+        Scanner scannerBlindaje = new Scanner(System.in);
+        String opcionBlindaje = scanner.nextLine();
+        Blindaje blindajeNuevo = (Blindaje) fabricaBlindaje.getComponente(opcionBlindaje);
+        blindajeNuevo.crearBlindaje();
+
+        System.out.println("A continuación se muestran a detalle las especificaciones de" +
+                "las armas con las que contamos.");
+        new ArmaMisilesPlasma().getEstadisticas();
+        new ArmaLaserDestructor().getEstadisticas();
+        new ArmaLaserSimple().getEstadisticas();
+        Scanner scannerArmas = new Scanner(System.in);
+        String opcionArmas = scanner.nextLine();
+        Armas armasNuevas = (Armas) fabricaArmas.getComponente(opcionArmas);
+        armasNuevas.crearArmas();
+        Nave nna = new Nave(propulsionNueva, blindajeNuevo, cabinaNueva, armasNuevas);
+        return nna;
     }
 }

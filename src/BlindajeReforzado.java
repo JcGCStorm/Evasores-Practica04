@@ -5,7 +5,7 @@
  * @implements Blindaje
  */
 public class BlindajeReforzado implements Blindaje {
-    String tipo = "   - Blindaje reforzado";
+    String tipo = "   2. Blindaje reforzado";
     int precio = 180;
     int ataque = 0;
     int defensa = 100;
@@ -21,7 +21,7 @@ public class BlindajeReforzado implements Blindaje {
      */
     @Override
     public void crearBlindaje() {
-        tipo = "Blindaje reforzado";
+        tipo = "   - Blindaje reforzado";
     }
 
     /**
@@ -43,6 +43,10 @@ public class BlindajeReforzado implements Blindaje {
                 "\n  Ataque: " + ataque + "\n  Defensa:" + defensa + "\n  Velocidad: " + velocidad +
                 "\n  Peso: " + peso);
     }
+
+    /**
+     * Metodos get para obtener las estadisticas y el precio
+     */
 
     @Override
     public int getPrecio() {

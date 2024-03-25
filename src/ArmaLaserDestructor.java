@@ -7,7 +7,7 @@
  */
 public class ArmaLaserDestructor implements Armas {
 
-    String tipo = "   -Laser Destructor";
+    String tipo = "  2. Laser Destructor";
     int precio = 2000;
     int ataque = 20;
     int defensa = 0;
@@ -22,7 +22,7 @@ public class ArmaLaserDestructor implements Armas {
      */
     @Override
     public void crearArmas() {
-        tipo = "Laser Destructor";
+        tipo = "   - Laser Destructor";
     }
 
     /**
@@ -43,6 +43,9 @@ public class ArmaLaserDestructor implements Armas {
 
     }
 
+    /**
+     * Metodos get para obtener las estadisticas y el precio
+     */
     @Override
     public int getPrecio() {
         return precio;

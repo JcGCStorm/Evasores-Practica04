@@ -34,15 +34,15 @@ public class FabricaArmas extends AbstractFactory {
      * @param tipoArma
      * @return {@link Armas, el arma deseada por el cliente.
      */
-    public Armas getArma(int tipoArma) {
+    public Armas getArma(String tipoArma) {
         if (tipoArma == null) {
             return null;
-        } else if (tipoArma.equalsIgnoreCase("simple")) {
-            return new ArmaLaserSimple();
-        } else if (tipoArma.equalsIgnoreCase("misiles")) {
+        } else if (tipoArma.equalsIgnoreCase("1")) {
             return new ArmaMisilesPlasma();
-        } else if (tipoArma.equalsIgnoreCase("destructor")) {
+        } else if (tipoArma.equalsIgnoreCase("2")) {
             return new ArmaLaserDestructor();
+        } else if (tipoArma.equalsIgnoreCase("3")) {
+            return new ArmaLaserSimple();
         }
         return null;
     }

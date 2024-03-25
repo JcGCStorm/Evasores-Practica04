@@ -7,7 +7,7 @@
  */
 public class ArmaMisilesPlasma implements Armas {
 
-    String tipo = "   - Misiles de Plasma";
+    String tipo = "   1. Misiles de Plasma";
     int precio = 1500;
     int ataque = 15;
     int defensa = 0;
@@ -22,7 +22,7 @@ public class ArmaMisilesPlasma implements Armas {
      */
     @Override
     public void crearArmas() {
-        tipo = "Misiles de Plasma";
+        tipo = "   - Misiles de Plasma";
     }
 
     /**
@@ -43,6 +43,9 @@ public class ArmaMisilesPlasma implements Armas {
 
     }
 
+    /**
+     * Metodos get para obtener las estadisticas y el precio
+     */
     @Override
     public int getPrecio() {
         return precio;

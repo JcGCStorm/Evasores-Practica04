@@ -5,14 +5,49 @@
  */
 public interface Propulsion {
 
-    public abstract void getEstadisticas();
-    public abstract int getPrecio();
-    public abstract int getAtaque();
-    public abstract int getDefensa();
-    public abstract int getVelocidad();
-    public abstract int getPeso();
     /**
-     * Método crearPropulsion, el cuál crea una <i>propulsion</i> que agrega una <b>velocidad</b>
+     * Obtiene las estadísticas del sistema de <i>Propulsion</i>.
+     */
+    public abstract void getEstadisticas();
+
+    /**
+     * Obtiene el precio del sistema de <i>Propulsion</i>..
+     * 
+     * @return el precio del sistema de <i>Propulsion</i>.
+     */
+    public abstract int getPrecio();
+
+    /**
+     * Obtiene el valor de Ataque del sistema de <i>Propulsion</i>.
+     * 
+     * @return el valor de Ataque del sistema de <i>Propulsion</i>.
+     */
+    public abstract int getAtaque();
+
+    /**
+     * Obtiene el valor de Defensa del sistema de <i>Propulsion</i>.
+     * 
+     * @return el valor de Defensa del sistema de <i>Propulsion</i>.
+     */
+    public abstract int getDefensa();
+
+    /**
+     * Obtiene el valor de Velocidad del sistema de <i>Propulsion</i>.
+     * 
+     * @return el valor de Velocidad del sistema de <i>Propulsion</i>.
+     */
+    public abstract int getVelocidad();
+
+    /**
+     * Obtiene el valor de Peso del sistema de <i>Propulsion</i>.
+     * 
+     * @return el valor de Peso del sistema de <i>Propulsion</i>.
+     */
+    public abstract int getPeso();
+
+    /**
+     * Método crearPropulsion, el cuál crea una <i>propulsion</i> que agrega una
+     * <b>velocidad</b>
      * especifica a la nave del cliente.
      */
     public void crearPropulsion();
@@ -21,5 +56,5 @@ public interface Propulsion {
      * Método getTipo, que obtiene el tipo de la <i>propulsion</i> de nuestra nave.
      */
     public void getTipo();
-    
+
 }
