@@ -10,6 +10,7 @@ public class FabricaCabina extends AbstractFactory {
      * {@link AbstractFactory}, este nos devuelve el tipo de componente de la nave, en este caso
      * nos devuelve <i>cabinas</i> según la decisión del cliente. En este metodo hacemos uso del 
      * metodo <code>getCabina()</code> que nos devuelve la cabina de la nave del cliente.
+     * @param tipoComponente el componente del cliente.
      * @return un objeto del tipo de la cabina que escogio el cliente.
      */
     @Override
@@ -19,7 +20,8 @@ public class FabricaCabina extends AbstractFactory {
 
     /**
      * Metodo getCabina que nos devuelve una cabina en especifico según la elección del cliente.
-     * Recibe un tipo de cabina en una {@link String} y nos devuelve un objeto de tipo {@link Cabina}
+     * Recibe un tipo de <b>cabina</b> en una {@link String} y nos devuelve un objeto de tipo 
+     * {@link Cabina}
      * @param tipoCabina
      * @return {@link Cabina}, la cabina deseada por el cliente.
      */
@@ -29,9 +31,9 @@ public class FabricaCabina extends AbstractFactory {
 		} else if(tipoCabina.equalsIgnoreCase("individual")){
 			return new CabinaIndividual();
 		} else if(tipoCabina.equalsIgnoreCase("tripulacion")){
-			return new CabinaIndividual();
+			return new CabinaTripulacion();
 		} else if (tipoCabina.equalsIgnoreCase("ejercito")){
-            return new CabinaIndividual();
+            return new CabinaEjercito();
           }
 		return null;
 	}   

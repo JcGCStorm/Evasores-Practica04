@@ -1,36 +1,37 @@
 /**
- * Clase que representa a una <i>cabina</i> de tipo <b>Individual</b>,
+ * Clase que representa a una <i>cabina</i> de tipo <b>Tripulacion</b>,
  * implementa a la
  * interfaz {@link Cabina}, nos ayuda a crear una nave con una <i>cabina</i>
- * <b>individual</b>.
+ * para una
+ * <b>tripulacion</b>.
  * 
  * @implements Cabina
  */
-public class CabinaIndividual implements Cabina {
-    String tipo = "   - Cabina Individual";
-    int precio = 100;
+public class CabinaTripulacion implements Cabina {
+    String tipo = "   - Cabina para una Tripulacion";
+    int precio = 200;
     int ataque = 0;
-    int defensa = 30;
+    int defensa = 150;
     int velocidad = 0;
-    int peso = 70;
+    int peso = 150;
 
     /**
      * Método crearCabina, que sobreescribe al metodo homonimo de la interfaz
      * {@link Cabina}.
      * Nos ayuda a crear una <i>cabina</i> con un <b>peso</b> especifico para la
      * nave
-     * del cliente. Además de decirnos que la cabina de la nave solo es para una
-     * persona.
+     * del cliente. Además de decirnos que la cabina de la nave es para una
+     * tripulacion.
      */
     @Override
     public void crearCabina() {
-        tipo = "Cabina Individual";
+        tipo = "Cabina para una Tripulacion";
     }
 
     /**
      * Método getTipo, que sobreescribe al metodo homonimo de la interfaz
      * {@link Cabina} y que
-     * obtiene la <i>cabina</i> de tipo <b>individual</b> de nuestra nave.
+     * obtiene la <i>cabina</i> de tipo <b>tripulacion</b> de nuestra nave.
      */
     @Override
     public void getTipo() {
@@ -42,7 +43,7 @@ public class CabinaIndividual implements Cabina {
      */
     @Override
     public void getEstadisticas() {
-        System.out.println("2. Cabina Individual:" + "\n  Precio: " + precio +
+        System.out.println("3. Cabina para una Tripulación:" + "\n  Precio: " + precio +
                 "\n  Ataque: " + ataque + "\n  Defensa:" + defensa + "\n  Velocidad: " + velocidad +
                 "\n  Peso: " + peso);
     }

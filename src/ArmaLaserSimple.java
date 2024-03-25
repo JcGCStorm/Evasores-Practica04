@@ -1,18 +1,18 @@
 /**
- * Clase que representa a la <i>propulsion</i> de tipo <i>LazerDestructor</i>,
+ * Clase que representa a la <i>propulsion</i> de tipo <i>LaserSimple</i>,
  * implementa
  * a la interfaz {@link Arma}, nos ayuda a crear una nave.
  * 
  * @implements Arma
  */
-public class ArmaLaserDestructor implements Armas {
+public class ArmaLaserSimple implements Armas {
 
-    String tipo = "   -Laser Destructor";
-    int precio = 2000;
-    int ataque = 20;
+    String tipo = "   - Laser Simple";
+    int precio = 800;
+    int ataque = 7;
     int defensa = 0;
     int velocidad = 0;
-    int peso = 300;
+    int peso = 40;
 
     /**
      * Método crearArmas, que sobreescribe al metodo homonimo de la interfaz
@@ -22,7 +22,7 @@ public class ArmaLaserDestructor implements Armas {
      */
     @Override
     public void crearArmas() {
-        tipo = "Laser Destructor";
+        tipo = "Laser Simple";
     }
 
     /**

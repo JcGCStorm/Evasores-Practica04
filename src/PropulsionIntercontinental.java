@@ -1,19 +1,19 @@
 /**
  * Clase que representa a un tipo de <i>propulsion</i>, en este caso
- * <b>Intergalactico</b>.
+ * <b>Intercontinentak</b>.
  * Implementa a la interfaz {@link Propulsion}, nos ayuda a crear una nave con
  * una <b>velocidad
- * intergalactica</b>.
+ * intercontinental</b>.
  * 
  * @implements Propulsion
  */
-public class PropulsionIntergalactico implements Propulsion {
-    String tipo = "   - Propulsion para viajar entre galaxias";
-    int precio = 7000;
+public class PropulsionIntercontinental implements Propulsion {
+    String tipo = "   - Propulsion para distancias planetarias";
+    int precio = 5000;
     int ataque = 0;
-    int defensa = 50;
-    int velocidad = 3000;
-    int peso = 60;
+    int defensa = 0;
+    int velocidad = 300;
+    int peso = 100;
 
     /**
      * Método crearPropulsion, que sobreescribe al metodo homonimo de la interfaz
@@ -24,7 +24,7 @@ public class PropulsionIntergalactico implements Propulsion {
      */
     @Override
     public void crearPropulsion() {
-        tipo = "Propulsion para viajar entre galaxias";
+        tipo = "Propulsion para distancias planetarias";
     }
 
     /**

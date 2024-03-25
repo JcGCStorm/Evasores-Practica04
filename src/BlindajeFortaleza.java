@@ -1,47 +1,48 @@
 /**
- * Clase que representa a un tipo de <i>propulsion</i>, en este caso
- * <b>Intergalactico</b>.
- * Implementa a la interfaz {@link Propulsion}, nos ayuda a crear una nave con
- * una <b>velocidad
- * intergalactica</b>.
+ * Clase que representa al blindaje de tipo Fortaleza, implementa
+ * a la interfaz {@link Blindaje}, nos ayuda a crear una nave.
  * 
- * @implements Propulsion
+ * @implements Blindaje
  */
-public class PropulsionIntergalactico implements Propulsion {
-    String tipo = "   - Propulsion para viajar entre galaxias";
-    int precio = 7000;
+public class BlindajeFortaleza implements Blindaje {
+    String tipo = "   - Blindaje de fortaleza";
+    int precio = 200;
     int ataque = 0;
-    int defensa = 50;
-    int velocidad = 3000;
-    int peso = 60;
+    int defensa = 500;
+    int velocidad = 0;
+    int peso = 500;
 
     /**
-     * Método crearPropulsion, que sobreescribe al metodo homonimo de la interfaz
-     * {@link Propulsion},
-     * nos ayuda a crear una <i>propulsion</i> con una <b>velocidad</b> especifica
-     * para la nave
+     * Método crearBlindaje, que sobreescribe al metodo homonimo de la interfaz
+     * {@link Blindaje},
+     * nos ayuda a crear un <i>blindaje</i> con una <b>defensa</b> especifica para
+     * la nave
      * del cliente.
      */
     @Override
-    public void crearPropulsion() {
-        tipo = "Propulsion para viajar entre galaxias";
+    public void crearBlindaje() {
+        tipo = "Blindaje de fortaleza";
     }
 
     /**
      * Método getTipo, que sobreescribe al metodo homonimo de la interfaz
-     * {@link Propulsion} y que
-     * obtiene la <i>propulsion</i> de tipo <b>Intergalactico</b> de nuestra nave.
+     * {@link Blindaje} y que
+     * obtiene el <i>blindaje</i> de tipo <b>reforzado</b> de nuestra nave.
      */
     @Override
     public void getTipo() {
         System.out.println(tipo);
     }
 
+    /**
+     * Método getEstadisticas, que obtiene las estadisticas del componente
+     */
     @Override
     public void getEstadisticas() {
         System.out.println(tipo + "\n  Precio: " + precio +
                 "\n  Ataque: " + ataque + "\n  Defensa:" + defensa + "\n  Velocidad: " + velocidad +
                 "\n  Peso: " + peso);
+
     }
 
     @Override

@@ -4,6 +4,13 @@
  * necesarios para crear una propulsion especifica y obtener el tipo de propulsion creado.
  */
 public interface Propulsion {
+
+    public abstract void getEstadisticas();
+    public abstract int getPrecio();
+    public abstract int getAtaque();
+    public abstract int getDefensa();
+    public abstract int getVelocidad();
+    public abstract int getPeso();
     /**
      * Método crearPropulsion, el cuál crea una <i>propulsion</i> que agrega una <b>velocidad</b>
      * especifica a la nave del cliente.

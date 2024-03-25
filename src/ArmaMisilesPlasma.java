@@ -5,14 +5,14 @@
  * 
  * @implements Arma
  */
-public class ArmaLaserDestructor implements Armas {
+public class ArmaMisilesPlasma implements Armas {
 
-    String tipo = "   -Laser Destructor";
-    int precio = 2000;
-    int ataque = 20;
+    String tipo = "   - Misiles de Plasma";
+    int precio = 1500;
+    int ataque = 15;
     int defensa = 0;
     int velocidad = 0;
-    int peso = 300;
+    int peso = 180;
 
     /**
      * Método crearArmas, que sobreescribe al metodo homonimo de la interfaz
@@ -22,7 +22,7 @@ public class ArmaLaserDestructor implements Armas {
      */
     @Override
     public void crearArmas() {
-        tipo = "Laser Destructor";
+        tipo = "Misiles de Plasma";
     }
 
     /**
